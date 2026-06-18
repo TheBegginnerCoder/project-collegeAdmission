@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Komputer (unpam) — Sistem Informasi Kampus</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div id="cursor">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+  </div>
+
+  <!-- ─── TOPBAR ─── -->
+  <header class="topbar">
+    <div class="logo">
+      Unpam Serang<span>.</span>
+      <span class="logo-badge">Sistem Komputer</span>
+    </div>
+    <nav class="topbar-nav">
+      <button class="nav-btn active" onclick="showSection('beranda')">Beranda</button>
+      <button class="nav-btn" onclick="showSection('jadwal')">Jadwal</button>
+      <button class="nav-btn" onclick="showSection('mahasiswa')">Mahasiswa</button>
+      <button class="nav-btn" onclick="showSection('nilai')">Nilai</button>
+      <button class="nav-btn" onclick="showSection('pengumuman')">Pengumuman</button>
+      <button class="nav-btn" onclick="showSection('fasilitas')">Fasilitas</button>
+      <button class="nav-btn" onclick="showSection('galeri')">Galeri</button>
+    </nav>
+    <div class="topbar-time" id="clock">--:--:--</div>
+  </header>
+
+  <main>
+
+    <!-- ═══ BERANDA ═══ -->
+    <section id="beranda" class="section active">
+
+      <div class="hero reveal">
+        <div class="hero-eyebrow">Sistem Informasi Akademik</div>
+        <h1 class="hero-title">
+          Kampus<br><em>Unpam</em><br>Serang
+        </h1>
+        <p class="hero-sub">
+          Portal terpadu untuk mahasiswa, dosen, dan staf.
+          Akses jadwal, nilai, pengumuman, dan informasi fasilitas kampus dalam satu platform.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="12400">0</span>
+            <span class="stat-label">Mahasiswa</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="300">0</span>
+            <span class="stat-label">Dosen &amp; Staf</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="12">0</span>
+            <span class="stat-label">Program Studi</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="4">0</span>
+            <span class="stat-label">Fakultas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker -->
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <span><b>●</b> UTS Semester Genap dimulai 4 Mei 2026</span>
+          <span><b>●</b> Pendaftaran KRS dibuka hingga 30 April</span>
+          <span><b>●</b> Seminar Nasional AI &amp; Teknologi — Aula Gedung A</span>
+          <span><b>●</b> Beasiswa Prestasi Akademik — Daftar Sekarang</span>
+          <span><b>●</b> Perpustakaan buka 07.00–21.00 setiap hari kerja</span>
+          <span><b>●</b> UTS Semester Genap dimulai 4 Mei 2026</span>
+          <span><b>●</b> Pendaftaran KRS dibuka hingga 30 April</span>
+          <span><b>●</b> Seminar Nasional AI &amp; Teknologi — Aula Gedung A</span>
+          <span><b>●</b> Beasiswa Prestasi Akademik — Daftar Sekarang</span>
+          <span><b>●</b> Perpustakaan buka 07.00–21.00 setiap hari kerja</span>
+        </div>
+      </div>
+
+      <!-- Module Cards -->
+      <div style="padding: 3rem 2.5rem;">
+        <div class="section-header">
+          <h2 class="section-title">Modul Utama</h2>
+          <span class="section-meta">7 modul tersedia</span>
+        </div>
+        <div class="grid grid-3" style="background: var(--line); gap: 1px;">
+
+          <div class="card reveal" onclick="showSection('jadwal')">
+            <div class="card-tag">Akademik</div>
+            <div class="card-title">Jadwal Kuliah</div>
+            <div class="card-sub">Lihat jadwal perkuliahan minggu ini beserta ruang dan dosen pengampu.</div>
+            <div class="card-meta"><span class="tag">Senin–Sabtu</span><span>→</span></div>
+          </div>
+
+          <div class="card reveal" style="transition-delay:0.07s" onclick="showSection('mahasiswa')">
+            <div class="card-tag">Data</div>
+            <div class="card-title">Data Mahasiswa</div>
+            <div class="card-sub">Pencarian cepat data mahasiswa aktif berdasarkan nama atau NIM.</div>
+            <div class="card-meta"><span class="tag">12.4k records</span><span>→</span></div>
+          </div>
+
+          <div class="card reveal" style="transition-delay:0.14s" onclick="showSection('nilai')">
+            <div class="card-tag">Akademik</div>
+            <div class="card-title">Transkrip Nilai</div>
+            <div class="card-sub">Rekap nilai mata kuliah dan perhitungan IPK semester berjalan.</div>
+            <div class="card-meta"><span class="tag">Real-time</span><span>→</span></div>
+          </div>
+
+          <div class="card reveal" style="transition-delay:0.21s" onclick="showSection('pengumuman')">
+            <div class="card-tag">Informasi</div>
+            <div class="card-title">Pengumuman</div>
+            <div class="card-sub">Informasi terkini dari rektorat, dekanat, dan unit kegiatan mahasiswa.</div>
+            <div class="card-meta"><span class="tag">5 baru</span><span>→</span></div>
+          </div>
+
+          <div class="card reveal" style="transition-delay:0.28s" onclick="showSection('fasilitas')">
+            <div class="card-tag">Kampus</div>
+            <div class="card-title">Fasilitas</div>
+            <div class="card-sub">Status ketersediaan ruang, lab, perpustakaan, dan area olahraga.</div>
+            <div class="card-meta"><span class="tag">Live status</span><span>→</span></div>
+          </div>
+
+          <div class="card reveal" style="transition-delay:0.35s" onclick="showSection('galeri')">
+            <div class="card-tag">Media</div>
+            <div class="card-title">Galeri Kampus</div>
+            <div class="card-sub">Foto dan video kegiatan akademik, fasilitas, dan kehidupan kampus.</div>
+            <div class="card-meta"><span class="tag">4 media</span><span>→</span></div>
+          </div>
+
+          <div class="card reveal" style="transition-delay:0.42s; background: var(--ink); color: var(--paper);">
+            <div class="card-tag" style="color: var(--accent)">Portal</div>
+            <div class="card-title">E-Learning</div>
+            <div class="card-sub" style="color:rgba(255,255,255,0.5)">Akses materi kuliah, tugas, dan forum diskusi online.</div>
+            <div class="card-meta" style="color:rgba(255,255,255,0.4)">
+              <span class="tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6)">Eksternal</span>
+              <span>↗</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ JADWAL ═══ -->
+    <section id="jadwal" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Jadwal Kuliah</h2>
+        <span class="section-meta">Minggu ini — Semester Genap 2024/2025</span>
+      </div>
+      <div class="schedule-wrap reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Waktu</th>
+              <th>Mata Kuliah</th>
+              <th>Dosen</th>
+              <th>Ruang</th>
+              <th>SKS</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="jadwal-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══ MAHASISWA ═══ -->
+    <section id="mahasiswa" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Data Mahasiswa</h2>
+        <span class="section-meta">Aktif — TA 2024/2025</span>
+      </div>
+      <div class="search-bar reveal">
+        <input type="text" id="search-input" placeholder="Cari nama atau NIM..." oninput="filterStudents()">
+        <button>Cari</button>
+      </div>
+      <div class="student-list reveal" id="student-list"></div>
+    </section>
+
+    <!-- ═══ NILAI ═══ -->
+    <section id="nilai" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Transkrip Nilai</h2>
+        <span class="section-meta">Semester Genap 2024/2025</span>
+      </div>
+      <div class="nilai-wrap reveal">
+        <div class="nilai-sidebar">
+          <div class="nilai-sidebar-title">Kelompok 5</div>
+          <div class="nilai-sidebar-nim">NIM: 123123456 · Sistem Komputer</div>
+          <div class="ipk-big" id="ipk-display">0.00</div>
+          <div class="ipk-label">Indeks Prestasi Kumulatif</div>
+          <div class="nilai-stat-row"><span>Total SKS Lulus</span><span>57 SKS</span></div>
+          <div class="nilai-stat-row"><span>Semester</span><span>3</span></div>
+          <div class="nilai-stat-row"><span>Angkatan</span><span>2025</span></div>
+          <div class="nilai-stat-row"><span>Status</span><span style="color:#4ade80">Aktif</span></div>
+        </div>
+        <div class="nilai-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kode MK</th>
+                <th>Mata Kuliah</th>
+                <th>SKS</th>
+                <th>Nilai</th>
+                <th>Poin</th>
+                <th>Bobot</th>
+              </tr>
+            </thead>
+            <tbody id="nilai-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PENGUMUMAN ═══ -->
+    <section id="pengumuman" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Pengumuman</h2>
+        <span class="section-meta">5 pengumuman baru</span>
+      </div>
+      <div id="announce-list"></div>
+    </section>
+
+    <!-- ═══ FASILITAS ═══ -->
+    <section id="fasilitas" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Fasilitas Kampus</h2>
+        <span class="section-meta">Status real-time</span>
+      </div>
+      <div class="facility-grid reveal" id="facility-grid"></div>
+    </section>
+
+    <!-- ═══ GALERI ═══ -->
+    <section id="galeri" class="section">
+      <div class="section-header reveal">
+        <h2 class="section-title">Kelompok 5</h2>
+        <span class="section-meta">4 media · Foto &amp; Video</span>
+      </div>
+
+      <div class="gallery-stats reveal">
+        <div class="gstat"><span class="gstat-num">3</span><span class="gstat-lbl">Foto</span></div>
+        <div class="gstat"><span class="gstat-num">1</span><span class="gstat-lbl">Video</span></div>
+      </div>
+
+      <div class="gallery-filter reveal">
+        <button class="filter-btn active" onclick="filterGallery('semua', event)">Semua</button>
+        <button class="filter-btn" onclick="filterGallery('foto', event)">Foto</button>
+        <button class="filter-btn" onclick="filterGallery('video', event)">Video</button>
+      </div>
+
+      <div class="gallery-grid reveal" id="gallery-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕ TUTUP</button>
+    <button class="nav-prev" onclick="navLightbox(-1)">&#8592;</button>
+    <button class="nav-next" onclick="navLightbox(1)">&#8594;</button>
+    <div id="lightboxContent"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <footer>
+    <span>© 2026 Universitas Pamulang Serang — Sistem Informasi Akademik</span>
+    <span id="footer-date"></span>
+  </footer>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
